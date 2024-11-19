@@ -1,0 +1,52 @@
+<div class="container">
+  <h1>User Information</h1>
+
+  <form (ngSubmit)="addUser()">
+    <div>
+      <label>Name:</label>
+      <input type="text" [(ngModel)]="name" name="name" required />
+    </div>
+    <div>
+      <label>Age:</label>
+      <input type="number" [(ngModel)]="age" name="age" required />
+    </div>
+    <div>
+      <label>Email:</label>
+      <input type="email" [(ngModel)]="email" name="email" required />
+    </div>
+    <button type="submit">Add User</button>
+  </form>
+
+  <h2>User List</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Email</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users; let i = index">
+        <td *ngIf="editingIndex !== i">{{ user.name }}</td>
+        <td *ngIf="editingIndex === i">
+          <input [(ngModel)]="user.name" />
+        </td>
+        <td *ngIf="editingIndex !== i">{{ user.age }}</td>
+        <td *ngIf="editingIndex === i">
+          <input type="number" [(ngModel)]="user.age" />
+        </td>
+        <td *ngIf="editingIndex !== i">{{ user.email }}</td>
+        <td *ngIf="editingIndex === i">
+          <input type="email" [(ngModel)]="user.email" />
+        </td>
+        <td>
+          <button *ngIf="editingIndex === i" (click)="saveUser(i)">Save</button>
+          <button *ngIf="editingIndex !== i" (click)="editUser(i)">Edit</button>
+          <button (click)="deleteUser(i)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

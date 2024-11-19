@@ -1,0 +1,18 @@
+.active {
+  width: max-content;
+  height: max-content;
+  padding: 0ex;
+  background-color: crimson;
+  border: 2px 2px solid black;
+  grid-row: span;
+}
+.isactive {
+  width: 30px;
+  height: 30px;
+  background-color: coral;
+  padding: 20px;
+}
+
+.c1 {
+  border: 5px solid green;
+}

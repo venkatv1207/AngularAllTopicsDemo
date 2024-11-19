@@ -1,0 +1,10 @@
+<div>
+  <h1>Stopwatch</h1>
+  <p>
+    {{ formatTime(hours) }}:{{ formatTime(minutes) }}:{{ formatTime(seconds) }}
+  </p>
+
+  <button (click)="startStopwatch()" [disabled]="isRunning">Start</button>
+  <button (click)="pauseStopwatch()" [disabled]="!isRunning">Pause</button>
+  <button (click)="resetStopwatch()">Reset</button>
+</div>

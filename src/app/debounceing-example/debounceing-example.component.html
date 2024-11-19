@@ -1,0 +1,4 @@
+<input [(ngModel)]="searchControl" placeholder="Search here..." />
+<div *ngIf="results">
+  <p *ngFor="let result of results">{{ result }}</p>
+</div>

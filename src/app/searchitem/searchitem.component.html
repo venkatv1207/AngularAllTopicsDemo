@@ -1,0 +1,6 @@
+<div>
+  <input type="text" [(ngModel)]="searchterm" />
+</div>
+<ul>
+  <li *ngFor="let i of item | searchitem : searchterm">{{ i }}</li>
+</ul>

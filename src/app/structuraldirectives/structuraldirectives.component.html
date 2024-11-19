@@ -1,0 +1,47 @@
+<div>
+  <h1 *ngIf="1">Welcome to directives</h1>
+
+  <div *ngIf="!data; else sample">Loading</div>
+  <!--here sample is template reference variable-->
+
+  <ng-template #sample> this is ng template {{ data }}</ng-template>
+
+  <div *ngIf="data; then load; else sample"></div>
+  <ng-template #load>Loading....</ng-template>
+</div>
+
+<div>
+  <h4 *ngFor="let n of num; index as i">{{ i + 1 }} Para{{ n }}</h4>
+
+  <table border="1">
+    <tr *ngFor="let x of fruits; index as i">
+      <td>{{ i + 1 }}</td>
+      <td>{{ x }}</td>
+    </tr>
+  </table>
+
+  <table border="2">
+    <thead>
+      <td>ID</td>
+      <td>Name</td>
+      <td>Price</td>
+    </thead>
+    <tbody>
+      <tr *ngFor="let m of mobiles">
+        <td>{{ m.id }}</td>
+        <td>{{ m.name }}</td>
+        <td>{{ m.price }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!--ng Switch Cases-->
+<div>
+  <input type="text" [(ngModel)]="option" />
+  <div [ngSwitch]="option">
+    <div *ngSwitchCase="'+'">{{ num1 + num2 }}</div>
+    <div *ngSwitchCase="'-'">{{ num1 - num2 }}</div>
+    <div *ngSwitchDefault="'/'">{{ num1 / num2 }}</div>
+  </div>
+</div>

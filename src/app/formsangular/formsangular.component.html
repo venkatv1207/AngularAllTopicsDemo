@@ -1,0 +1,36 @@
+<div>
+  <form action="" #userForm="ngForm" (ngSubmit)="submitForm(userForm)">
+    <label for="name">Name:</label>
+    <input type="text" name="name" [(ngModel)]="user.name" />
+    <label for="age">Age:</label>
+    <input type="text" name="age" [(ngModel)]="user.age" />
+    <label for="number">Phone num:</label>
+    <input type="text" name="number" [(ngModel)]="user.number" />
+
+    <button type="submit">Submit</button>
+  </form>
+  <div>
+    User details
+    <h4>{{ user.name }}</h4>
+    <h4>{{ user.age }}</h4>
+    <h4>{{ user.number }}</h4>
+  </div>
+</div>
+
+<div>
+  <form action="" #userDetails="ngForm" (ngSubmit)="onSubmit(userDetails)">
+    <label for="name">Name:</label>
+    <input type="text" name="name" id="" ngModel />
+
+    <label for="age">Age</label>
+    <input type="text" name="age" id="" ngModel />
+
+    <button type="submit">submit</button>
+  </form>
+
+  <div *ngIf="submitted">
+    <h3>User details</h3>
+    <h4>{{ submitted.name }}</h4>
+    <h4>{{ submitted.age }}</h4>
+  </div>
+</div>

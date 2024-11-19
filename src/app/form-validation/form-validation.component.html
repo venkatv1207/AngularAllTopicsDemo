@@ -1,0 +1,79 @@
+<!-- <div>
+  <form action="">
+    <input type="text" name="name" #r ngModel maxlength="4" autocomplete="off">
+    <h3>{{r.className}}</h3>
+  </form>
+</div> -->
+
+<div>
+  <form action="" #userForm="ngForm" (ngSubmit)="onLogin(userForm)">
+    <div>
+      <label for="un">UserName</label>
+      <input
+        type="text"
+        class="form-control"
+        id="un"
+        name="username"
+        ngModel
+        required
+        minlength="5"
+        #refUserName="ngModel"
+      />
+      <!-- <p *ngIf="refUserName.touched && refUserName.invalid" style="color:red">
+          *Username required
+        </p> -->
+      <p
+        *ngIf="
+          (userForm.submitted || refUserName.touched) &&
+          refUserName.errors?.['required']
+        "
+        style="color: red"
+      >
+        *username required
+      </p>
+      <p
+        *ngIf="
+          (userForm.submitted || refUserName.touched) &&
+          refUserName.errors?.['minlength']
+        "
+        style="color: red"
+      >
+        *minLength required 5
+      </p>
+    </div>
+    <div>
+      <label for="pw">Password</label>
+      <input
+        type="password"
+        id="pw"
+        name="password"
+        ngModel
+        required
+        pattern="\d\d-\d"
+        #refPassword="ngModel"
+        minlength="5"
+      />
+
+      <p
+        *ngIf="
+          (userForm.submitted || refPassword.touched) &&
+          refPassword.errors?.['required']
+        "
+        style="color: red"
+      >
+        *Password required
+      </p>
+      <p
+        *ngIf="
+          (userForm.submitted || refPassword.touched) &&
+          refPassword.errors?.['minlength']
+        "
+        style="color: red"
+      >
+        *minLength required 5
+      </p>
+    </div>
+    <button type="submit">Login</button>
+  </form>
+  <!-- <div>{{msg}}</div> -->
+</div>

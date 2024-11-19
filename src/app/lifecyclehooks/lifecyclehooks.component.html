@@ -1,0 +1,8 @@
+<div>
+  <button (click)="toggled()">Click</button>
+  <input type="text" [(ngModel)]="changeName" />
+  <app-lifecyclehookchild *ngIf="isClicked" [changeName]="changeName">
+    <h3 #projected>Hello Child component demo of ngaftercontentinit</h3>
+    <!--Here we expect that it will shown in child component but it not shown so we need to inform angular where need to show, so we use ng-content directive-->
+  </app-lifecyclehookchild>
+</div>

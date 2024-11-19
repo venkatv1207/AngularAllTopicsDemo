@@ -1,0 +1,10 @@
+<h1 [class]="isactive ? 'active' : 'inactive'">Hello welcome to Angular 17</h1>
+
+<!--here we can give number of classes-->
+<h1 [class]="{ c1: check, active: isactive }">Hello welcome to Angular 17</h1>
+<div [class.active]="isactive">Hello Venkat Vadlakonda</div>
+
+<!--Style binding-->
+<h1 [style]="{ color: cvar }">This is Venky from DBK</h1>
+<h2 [style.color]="nvar">Venky from Siddipet</h2>
+<h1 [style]="myStyle">This is Venky from DBK</h1>

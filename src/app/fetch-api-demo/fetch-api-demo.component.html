@@ -1,0 +1,11 @@
+<p>fetch-api-demo works!</p>
+<div *ngIf="isLoading">
+  <p>Loading.....</p>
+</div>
+
+<div *ngIf="!isLoading">
+  <div *ngFor="let d of data">
+    <li>{{ d.title }}</li>
+    <li>Rs.{{ d.price }}/-</li>
+  </div>
+</div>

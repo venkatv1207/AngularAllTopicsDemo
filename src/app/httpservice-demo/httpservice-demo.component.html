@@ -1,0 +1,18 @@
+<button (click)="getData()" *ngIf="!data">Get API</button>
+
+<div *ngIf="data">
+  <table border="1">
+    <thead>
+      <th>ID</th>
+      <th>Title</th>
+      <th>Price</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let p of data">
+        <td>{{ p.id }}</td>
+        <td>{{ p.title }}</td>
+        <td>{{ p.price }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

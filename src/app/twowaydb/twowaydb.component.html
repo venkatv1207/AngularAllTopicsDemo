@@ -1,0 +1,11 @@
+<div>
+  <input type="text" name="username" [(ngModel)]="username" />
+  <input type="text" name="userID" [(ngModel)]="userID" />
+
+  <button (click)="toggleLogin()">{{ !islogged ? "logout" : "login" }}</button>
+  <div>
+    user Data
+    <h4>{{ username }}</h4>
+    <h4>{{ userID }}</h4>
+  </div>
+</div>
